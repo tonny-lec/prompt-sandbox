@@ -4,7 +4,7 @@ import { evaluateRun, generateFromPlan, planScenario } from "./adapters/mockAdap
 import { getScenario } from "./scenarios.js";
 
 function projectRootFrom(importMetaUrl) {
-  return path.resolve(path.dirname(new URL(importMetaUrl).pathname), "..", "..");
+  return path.resolve(path.dirname(new URL(importMetaUrl).pathname), "..");
 }
 
 export async function runScenarioById(scenarioId, options = {}) {

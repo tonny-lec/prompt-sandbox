@@ -23,7 +23,7 @@
 2. 変更点を 1 つに絞る
 3. 2 回以上 run して artifact を比較する
 4. `evaluation.md` の指摘が改善したか確認する
-5. 学びを `docs/harness/05-roadmap.md` か別メモへ反映する
+5. 学びを `docs/05-roadmap.md` か別メモへ反映する
 
 ## Comparison Axes
 

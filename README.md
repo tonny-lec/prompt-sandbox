@@ -1,46 +1,30 @@
 # prompt-sandbox
 
-プロンプトの試行と、ハーネス設計 / ハーネスエンジニアリングの研究を行うためのリポジトリです。
+このリポジトリは 2 つのコンテキストを分けて扱います。
 
-このリポジトリは、単なるプロンプト保管庫ではなく、次の 2 つを同時に扱います。
+- 本プロジェクトのコンテキスト: プロンプトやハーネス設計の知見をためる
+- `harness/` のコンテキスト: 実際に実験を回すための自己完結した実験場
 
-- 再利用したいプロンプト資産の保存
-- AI ハーネスを設計・比較・検証するための小さな実験基盤
+`harness/` は今後、より実運用に近い形へ育てていく前提なので、実験場が参照する docs / prompts / templates / runs は原則として `harness/` 配下に閉じ込めます。
 
-## ディレクトリ構成
+## どこを見るか
 
-- `prompts/`: 再利用するプロンプト
-- `docs/`: 設計方針、比較基準、運用メモ
-- `templates/`: ハーネスで使う artifact や `AGENTS.md` の雛形
-- `harness/`: 実験用の最小 CLI 実装
-- `runs/`: ハーネス実行結果の artifact 出力先
+- リポジトリ全体の方針: [`docs/project/context-boundary.md`](docs/project/context-boundary.md)
+- 実験場の入口: [`harness/README.md`](harness/README.md)
+- 再利用したい一般プロンプト: `prompts/`
 
-## まず読む場所
+## 境界ルール
 
-- ハーネス全体像: [`docs/harness/README.md`](docs/harness/README.md)
-- 技術選定の判断基準: [`docs/harness/01-decision-framework.md`](docs/harness/01-decision-framework.md)
-- artifact 設計: [`docs/harness/03-artifacts.md`](docs/harness/03-artifacts.md)
+- ルートの `docs/` は知見蓄積用
+- `harness/docs/` は実験場の運用文脈用
+- ルートの `prompts/` は汎用プロンプト保管用
+- `harness/prompts/` は実験場専用プロンプト用
+- `harness/runs/` は実験結果専用
 
-## MVP でできること
-
-- `planner / generator / evaluator` の流れを mock 実装で試す
-- `handoff artifact` を使う長時間タスク風の実行を試す
-- 実行ごとの artifact を保存し、一覧・比較する
-
-## 使い方
-
-依存関係はありません。Node.js 22 以降を想定しています。
+## 実験の始め方
 
 ```bash
+cd harness
 npm run harness -- run mock-basic
-npm run harness -- run long-run-handoff
 npm run harness -- inspect artifacts
-npm run harness -- compare mock-basic
 ```
-
-## 参考
-
-- OpenAI: Harness engineering  
-  https://openai.com/ja-JP/index/harness-engineering/
-- Anthropic: Harness design for long-running application development  
-  https://www.anthropic.com/engineering/harness-design-long-running-apps

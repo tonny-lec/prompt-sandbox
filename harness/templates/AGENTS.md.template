@@ -6,13 +6,13 @@
 
 ## Default Rules
 
-- まず `docs/harness/` を読む
+- まず `docs/` を読む
 - 実験では artifact を残す
 - 長時間タスクでは handoff を構造化して残す
 - prompt の変更と scenario の変更は同時に行わない
 
 ## References
 
-- `docs/harness/README.md`
-- `templates/harness/task-brief.md`
-- `templates/harness/handoff.json`
+- `docs/README.md`
+- `templates/task-brief.md`
+- `templates/handoff.json`
