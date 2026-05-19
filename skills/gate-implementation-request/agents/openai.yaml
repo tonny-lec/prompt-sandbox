@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gate Implementation Request"
+  short_description: "Check implementation requests before code edits"
+  default_prompt: "Use $gate-implementation-request to check whether this implementation request is actionable before modifying code."

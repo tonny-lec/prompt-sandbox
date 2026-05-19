@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Implementation Prompt"
+  short_description: "Review coding prompts before implementation"
+  default_prompt: "Use $review-implementation-prompt to review this implementation prompt before I send it to Codex."
